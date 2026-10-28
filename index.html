@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ekansh Tardeja</title>
+<meta name="description" content="Ekansh Tardeja, undergraduate in Physics at Fergusson College (Autonomous), Pune. Exoplanets and stellar radial velocities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F8FA; --ink:#1B2130; --muted:#5B6476; --rule:#DDE1E8;
+  --accent:#2A4D80; --accent-soft:#E6ECF5; --point:#B0413E;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#12161E; --ink:#E4E7EE; --muted:#9AA3B5; --rule:#2A3140;
+    --accent:#8FB0E3; --accent-soft:#1C2533; --point:#E3827E; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#12161E; --ink:#E4E7EE; --muted:#9AA3B5; --rule:#2A3140;
+  --accent:#8FB0E3; --accent-soft:#1C2533; --point:#E3827E; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.125rem;line-height:1.62;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* Nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+.nav{max-width:960px;margin:0 auto;padding:.9rem 1.5rem;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.nav .home{font-weight:600;color:var(--ink);text-decoration:none;font-size:1.05rem}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.4rem;flex-wrap:wrap;font-family:var(--sans);font-size:.92rem}
+.nav ul a{color:var(--muted);text-decoration:none}
+.nav ul a:hover,.nav ul a[aria-current="true"]{color:var(--ink)}
+
+main{max-width:960px;margin:0 auto;padding:0 1.5rem}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr minmax(260px,340px);gap:3rem;align-items:center;padding:4.5rem 0 3.5rem}
+.hero h1{font-size:clamp(2.6rem,6vw,3.6rem);font-weight:500;line-height:1.05;margin:0 0 1rem;letter-spacing:-.01em}
+.hero p{margin:0 0 1.25rem;max-width:34em;color:var(--muted)}
+.hero p strong{color:var(--ink);font-weight:500}
+.links{display:flex;gap:.6rem;flex-wrap:wrap;font-family:var(--sans);font-size:.92rem}
+.links a{padding:.45rem .9rem;border:1px solid var(--rule);border-radius:6px;text-decoration:none;color:var(--ink)}
+.links a.primary{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.links a:hover{border-color:var(--accent)}
+figure{margin:0}
+.plot svg{width:100%;height:auto;display:block}
+.plot figcaption{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-top:.4rem;line-height:1.45}
+
+/* Sections */
+section{display:grid;grid-template-columns:170px 1fr;gap:2rem;padding:3rem 0;border-top:1px solid var(--rule)}
+section > h2{font-size:1.35rem;font-weight:500;margin:0;line-height:1.3}
+.body{max-width:40em}
+.body > p:first-child{margin-top:0}
+.body p{margin:0 0 1rem}
+
+.entry{margin:0 0 2.25rem}
+.entry:last-child{margin-bottom:0}
+.entry h3{font-size:1.2rem;font-weight:600;margin:0;line-height:1.35}
+.meta{font-family:var(--sans);font-size:.88rem;color:var(--muted);margin:.25rem 0 .6rem;display:flex;flex-wrap:wrap;gap:.35rem .9rem;align-items:center}
+.status{font-family:var(--sans);font-size:.78rem;padding:.1rem .5rem;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
+.entry p{margin:0 0 .5rem}
+.tools{font-family:var(--sans);font-size:.88rem;color:var(--muted);margin:0}
+
+dl.grid{display:grid;grid-template-columns:9.5rem 1fr;gap:.6rem 1.25rem;margin:0}
+dl.grid dt{font-family:var(--sans);font-size:.9rem;color:var(--muted);padding-top:.15rem}
+dl.grid dd{margin:0}
+
+ol.timeline{list-style:none;margin:0 0 1.5rem;padding:0}
+ol.timeline li{display:grid;grid-template-columns:9.5rem 1fr;gap:1.25rem;padding:.55rem 0;border-bottom:1px dashed var(--rule)}
+ol.timeline li:last-child{border-bottom:0}
+ol.timeline .when{font-family:var(--sans);font-size:.9rem;color:var(--muted);padding-top:.15rem}
+ol.timeline .what span{display:block;color:var(--muted);font-size:1rem}
+
+footer{max-width:960px;margin:0 auto;padding:2rem 1.5rem 3rem;border-top:1px solid var(--rule);font-family:var(--sans);font-size:.85rem;color:var(--muted)}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:2rem;padding:3rem 0 2.5rem}
+  section{grid-template-columns:1fr;gap:1rem;padding:2.25rem 0}
+  dl.grid,ol.timeline li{grid-template-columns:1fr;gap:.1rem}
+  dl.grid dd{margin-bottom:.6rem}
+  .nav ul{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="home" href="#top">Ekansh Tardeja</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#outreach">Outreach</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div>
+      <h1>Ekansh Tardeja</h1>
+      <p><strong>Undergraduate in Physics at Fergusson College (Autonomous), Pune.</strong> I work on observational astrophysics, building Python pipelines for archival spectra and light curves of exoplanet hosts and eclipsing binaries.</p>
+      <div class="links">
+        <a class="primary" href="files/EkanshTardejaCV.pdf">Download CV</a>
+        <a href="mailto:ekanshtardeja@gmail.com">Email</a>
+        <a href="https://github.com/ekanshtardeja">GitHub</a>
+      </div>
+    </div>
+    <figure class="plot">
+      <svg viewBox="0 0 320 210" role="img" aria-labelledby="plot-title">
+        <title id="plot-title">Schematic phase-folded radial-velocity curve with data points and error bars</title>
+        <g stroke="var(--rule)" stroke-width="1">
+          <line x1="40" y1="20" x2="40" y2="180"/>
+          <line x1="40" y1="180" x2="300" y2="180"/>
+          <line x1="40" y1="100" x2="300" y2="100" stroke-dasharray="3 4"/>
+        </g>
+        <path id="rv-curve" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+        <g id="rv-points" fill="var(--point)" stroke="var(--point)" stroke-width="1"></g>
+        <g font-family="Instrument Sans, system-ui, sans-serif" font-size="10" fill="var(--muted)">
+          <text x="170" y="199" text-anchor="middle">Orbital phase</text>
+          <text x="16" y="100" text-anchor="middle" transform="rotate(-90 16 100)">Radial velocity</text>
+          <text x="40" y="192" text-anchor="middle">0</text>
+          <text x="300" y="192" text-anchor="middle">1</text>
+        </g>
+      </svg>
+      <figcaption>Schematic of a phase-folded radial-velocity curve, the kind of signal my WASP-18 pipeline recovers.</figcaption>
+    </figure>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="body">
+      <p>I’m a B.Sc. Physics student at Fergusson College (Autonomous), Pune, studying Physics and Mathematics, with a current CGPA of 8.95. I’m interested in observational astrophysics, particularly exoplanets, radial velocities and photometry of eclipsing binaries.</p>
+      <p>I do astrophotography as a way of making systematic observations and analysing the data that comes out of them. I also work as a science communicator at public stargazing sessions, and I’m an active member of the college Astro Club.</p>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="body">
+
+      <article class="entry">
+        <h3>Radial velocities of WASP-18 from archival spectra</h3>
+        <div class="meta"><span class="status">Aug – Sep 2026</span><span>Guided by Jebraan Mudholkar, master’s student, LMU Munich</span></div>
+        <p>An independent extraction of stellar radial velocities from publicly available WASP-18 spectra, using line-by-line Gaussian fitting, to recover the periodic signal induced by its known hot Jupiter.</p>
+        <p>The pipeline takes a star’s name, queries the ESO archive through astroquery, then plots and normalises each spectrum. It fits Gaussians to absorption lines at given rest wavelengths to measure their observed wavelengths, and converts the shifts into a radial velocity per spectrum.</p>
+        <p class="tools">Python, SciPy, Astropy, astroquery · <a href="https://github.com/ekanshtardeja/RVsFromSpectra">RVsFromSpectra on GitHub</a></p>
+      </article>
+
+      <article class="entry">
+        <h3>Times of minima of overcontact eclipsing binaries</h3>
+        <div class="meta"><span class="status">Feb – Mar 2026</span><span>Guided by Ravi Raja Pothuneni, PhD student, Osmania University</span></div>
+        <p>A pipeline for period-variation analysis of two overcontact eclipsing binaries, V2284 Cygni and V1918 Cygni.</p>
+        <p>Given an eclipsing binary’s name, it searches MAST for available light curves, processes and plots them, fits Gaussian profiles to each eclipse, and calculates the times of minima from the fitted profiles.</p>
+        <p class="tools">Python, SciPy, Astropy, Matplotlib · <a href="https://github.com/ekanshtardeja/TimesOfMinimaPipeline">TimesOfMinimaPipeline on GitHub</a></p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="outreach">
+    <h2>Outreach</h2>
+    <div class="body">
+
+      <article class="entry">
+        <h3>Science communicator, Aeronautics and Space Exploration (AXSX)</h3>
+        <div class="meta"><span class="status">Feb 2024 – present</span><span><a href="https://axsx.in/">axsx.in</a></span></div>
+        <p>At AXSX’s public stargazing sessions I guide telescope observations and explain astronomical objects, observing techniques and basic astronomy concepts to participants.</p>
+      </article>
+
+      <article class="entry">
+        <h3>National Science Day open day, IUCAA Pune</h3>
+        <div class="meta"><span class="status">Feb 2026</span></div>
+        <p>Built and explained a model of the nuclide chart for visitors at IUCAA’s annual open day, which brings the public in to learn about the science and research done at the centre.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Astro Club, Fergusson College</h3>
+        <div class="meta"><span class="status">Jul 2025 – present</span></div>
+        <p>Contribute to the annual science poster exhibition, which explains physics to the public through interactive models, posters and demonstrations. Volunteer in organising “Frontiers in Physics”, the club’s two-day national seminar with talks by professors and researchers from leading universities.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="body">
+      <dl class="grid">
+        <dt>Programming</dt><dd>Python, MATLAB, JavaScript</dd>
+        <dt>Libraries</dt><dd>NumPy, SciPy, Astropy, astroquery, Matplotlib</dd>
+        <dt>Tools</dt><dd>Jupyter, Git</dd>
+        <dt>Methods</dt><dd>Spectral line fitting, radial-velocity extraction, light-curve processing, eclipse timing</dd>
+        <dt>Data archives</dt><dd>ESO Science Archive, MAST</dd>
+        <dt>Languages</dt><dd>Hindi (native), English (C2)</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <div class="body">
+      <ol class="timeline">
+        <li><div class="when">Jul 2025 – present</div><div class="what">B.Sc. Physics, with Mathematics<span>Fergusson College (Autonomous), Pune · CGPA 8.95</span></div></li>
+        <li><div class="when">Aug – Sep 2026</div><div class="what">Radial velocities of WASP-18<span>With LMU Munich (remote)</span></div></li>
+        <li><div class="when">Feb – Mar 2026</div><div class="what">Times of minima of overcontact binaries<span>With Osmania University (remote)</span></div></li>
+        <li><div class="when">Feb 2024 – present</div><div class="what">Science communicator<span>Aeronautics and Space Exploration (AXSX)</span></div></li>
+      </ol>
+      <p>The full CV is available as a <a href="files/EkanshTardejaCV.pdf">PDF</a>.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="body">
+      <p>I’m open to research projects in exoplanets and observational stellar astrophysics alongside my degree. Email is the best way to reach me.</p>
+      <dl class="grid">
+        <dt>Email</dt><dd><a href="mailto:ekanshtardeja@gmail.com">ekanshtardeja@gmail.com</a></dd>
+        <dt>GitHub</dt><dd><a href="https://github.com/ekanshtardeja">github.com/ekanshtardeja</a></dd>
+        <dt>Location</dt><dd>Pune, India</dd>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Ekansh Tardeja</footer>
+
+<script>
+(function(){
+  var x0=40,w=260,y0=100,K=68,pts=[];
+  for(var i=0;i<=100;i++){var p=i/100;pts.push((x0+p*w).toFixed(1)+","+(y0-K*Math.sin(2*Math.PI*p)).toFixed(1));}
+  document.getElementById("rv-curve").setAttribute("d","M"+pts.join(" L"));
+  var data=[[.05,4],[.12,-3],[.2,-2],[.27,3],[.33,-4],[.41,3],[.48,-2],[.56,3],[.63,-3],[.7,2],[.78,-4],[.86,3],[.93,-2]];
+  var g=document.getElementById("rv-points"),ns="http://www.w3.org/2000/svg";
+  data.forEach(function(d){
+    var x=x0+d[0]*w,y=y0-K*Math.sin(2*Math.PI*d[0])+d[1];
+    var l=document.createElementNS(ns,"line");l.setAttribute("x1",x);l.setAttribute("x2",x);l.setAttribute("y1",y-7);l.setAttribute("y2",y+7);g.appendChild(l);
+    var c=document.createElementNS(ns,"circle");c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r",2.8);g.appendChild(c);
+  });
+  var links=document.querySelectorAll('.nav ul a'),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'));});
+  function mark(){var y=window.scrollY+120,cur=-1;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});links.forEach(function(a,i){a.setAttribute('aria-current',i===cur?'true':'false');});}
+  window.addEventListener('scroll',mark,{passive:true});mark();
+})();
+</script>
+</body>
+</html>
