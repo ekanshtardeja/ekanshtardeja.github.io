@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#1D1F22">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ekansh Tardeja</title>
+<meta name="description" content="Ekansh Tardeja, undergraduate in Physics at Fergusson College (Autonomous), Pune. Exoplanets and stellar radial velocities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#1D1F22; --surface:#24272B; --ink:#ECEAE5; --muted:#A2A5AC; --rule:#33373D;
+  --accent:#D2B47C; --accent-soft:rgba(210,180,124,.12); --link:#E2C998;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root[data-theme="light"]{
+  --paper:#F5F4F1; --surface:#ECEAE5; --ink:#1F2124; --muted:#5E6168; --rule:#D9D6CF;
+  --accent:#8A6A2F; --accent-soft:rgba(138,106,47,.1); --link:#7A5C24; color-scheme:light;
+}
+:root[data-theme="dark"]{color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.125rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:var(--link);text-decoration-color:color-mix(in srgb,var(--link) 45%,transparent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-color:var(--link)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+::selection{background:var(--accent);color:var(--paper)}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav{max-width:980px;margin:0 auto;padding:.95rem 1.5rem;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.nav .home{font-weight:500;color:var(--ink);text-decoration:none;font-size:1.1rem}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.5rem;flex-wrap:wrap;font-family:var(--sans);font-size:.9rem}
+.nav ul a{color:var(--muted);text-decoration:none;padding-bottom:.2rem;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.nav ul a:hover{color:var(--ink)}
+.nav ul a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+
+main{max-width:980px;margin:0 auto;padding:0 1.5rem}
+
+.hero{display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:center;padding:5.5rem 0 3.5rem}
+.hero .role{font-family:var(--sans);font-size:.95rem;color:var(--accent);margin:0 0 .9rem}
+.hero h1{font-size:clamp(2.8rem,6.5vw,4.2rem);font-weight:400;line-height:1;margin:0 0 1.4rem;letter-spacing:-.015em}
+.hero p.lede{margin:0 0 2rem;max-width:31em;color:var(--muted);font-size:1.2rem;line-height:1.6}
+.links{display:flex;gap:.65rem;flex-wrap:wrap;font-family:var(--sans);font-size:.92rem}
+.links a{padding:.55rem 1.05rem;border:1px solid var(--rule);border-radius:999px;text-decoration:none;color:var(--ink);transition:border-color .15s,background .15s}
+.links a:hover{border-color:var(--accent)}
+.links a.primary{background:var(--accent);border-color:var(--accent);color:#1D1F22;font-weight:500}
+.links a.primary:hover{background:var(--link);border-color:var(--link)}
+
+
+section{display:grid;grid-template-columns:180px 1fr;gap:2.5rem;padding:3.5rem 0;border-top:1px solid var(--rule)}
+section > h2{font-size:1.4rem;font-weight:400;margin:0;line-height:1.3;color:var(--ink)}
+.body{max-width:40em}
+.body > p:first-child{margin-top:0}
+.body p{margin:0 0 1rem}
+
+.entry{margin:0 0 2.75rem;padding-left:1.25rem;border-left:1px solid var(--rule)}
+.entry:last-child{margin-bottom:0}
+.entry h3{font-size:1.22rem;font-weight:500;margin:0;line-height:1.35}
+.meta{font-family:var(--sans);font-size:.86rem;color:var(--muted);margin:.4rem 0 .75rem;display:flex;flex-wrap:wrap;gap:.4rem .9rem;align-items:center}
+.status{font-family:var(--sans);font-size:.78rem;padding:.12rem .55rem;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.entry p{margin:0 0 .6rem}
+.tools{font-family:var(--sans);font-size:.88rem;color:var(--muted);margin:.2rem 0 0}
+
+dl.grid{display:grid;grid-template-columns:9.5rem 1fr;gap:.7rem 1.25rem;margin:0}
+dl.grid dt{font-family:var(--sans);font-size:.88rem;color:var(--muted);padding-top:.2rem}
+dl.grid dd{margin:0}
+
+ol.timeline{list-style:none;margin:0 0 1.5rem;padding:0}
+ol.timeline li{display:grid;grid-template-columns:9.5rem 1fr;gap:1.25rem;padding:.75rem 0;border-bottom:1px solid var(--rule)}
+ol.timeline li:last-child{border-bottom:0}
+ol.timeline .when{font-family:var(--sans);font-size:.88rem;color:var(--muted);padding-top:.2rem}
+ol.timeline .what span{display:block;color:var(--muted);font-size:1rem}
+
+footer{max-width:980px;margin:0 auto;padding:2rem 1.5rem 3rem;border-top:1px solid var(--rule);font-family:var(--sans);font-size:.85rem;color:var(--muted)}
+
+@media (max-width:780px){
+  .hero{grid-template-columns:1fr;gap:2.5rem;padding:3rem 0 3rem}
+  .portrait{order:-1}
+  section{grid-template-columns:1fr;gap:1.25rem;padding:2.5rem 0}
+  dl.grid,ol.timeline li{grid-template-columns:1fr;gap:.1rem}
+  dl.grid dd{margin-bottom:.7rem}
+  .nav ul{gap:1.1rem;flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none;font-size:.88rem}
+  .nav ul::-webkit-scrollbar{display:none}
+  .nav ul li{flex:none}
+}
+
+.portrait{position:relative;margin:0;width:280px;justify-self:center}
+.portrait img{position:relative;z-index:1;display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:50% 22%;border-radius:50%;background:var(--surface);outline:1px solid var(--accent);outline-offset:9px}
+
+.lightcurve{margin:0 0 .5rem;padding:0}
+.lightcurve svg{display:block;width:100%;height:84px}
+.lc-pts{fill:var(--muted);opacity:.45}
+.lc-model{fill:none;stroke:var(--accent);stroke-width:1.5;vector-effect:non-scaling-stroke;opacity:.9}
+
+section > h2::after{content:"";display:block;width:28px;height:2px;background:var(--accent);margin-top:.7rem}
+@media (max-width:780px){.portrait{width:200px;justify-self:start;margin:1.5rem 0 1rem 2.5rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="home" href="#top">Ekansh Tardeja</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#outreach">Outreach</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div>
+      <p class="role">Physics undergraduate, Fergusson College (Autonomous), Pune</p>
+      <h1>Ekansh Tardeja</h1>
+      <p class="lede">I work on observational astrophysics, building Python pipelines for archival spectra and light curves of exoplanet hosts and eclipsing binaries.</p>
+      <div class="links">
+        <a class="primary" href="files/EkanshTardejaCV.pdf">Download CV</a>
+        <a href="mailto:ekanshtardeja@gmail.com">Email</a>
+        <a href="https://github.com/ekanshtardeja">GitHub</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="files/ekansh.jpg" alt="" width="720" height="900">
+    </figure>
+  </div>
+
+<figure class="lightcurve" aria-hidden="true">
+    <svg viewBox="0 0 980 90" preserveAspectRatio="none">
+      <g class="lc-pts"><circle cx="6.0" cy="33.2" r="1.7"/><circle cx="12.5" cy="35.6" r="1.7"/><circle cx="19.0" cy="33.3" r="1.7"/><circle cx="25.5" cy="33.0" r="1.7"/><circle cx="32.0" cy="31.0" r="1.7"/><circle cx="38.5" cy="33.3" r="1.7"/><circle cx="45.0" cy="37.6" r="1.7"/><circle cx="51.5" cy="35.4" r="1.7"/><circle cx="58.0" cy="37.3" r="1.7"/><circle cx="64.5" cy="34.8" r="1.7"/><circle cx="71.0" cy="35.3" r="1.7"/><circle cx="77.5" cy="34.6" r="1.7"/><circle cx="84.0" cy="28.7" r="1.7"/><circle cx="90.5" cy="36.7" r="1.7"/><circle cx="97.0" cy="35.6" r="1.7"/><circle cx="103.4" cy="35.6" r="1.7"/><circle cx="109.9" cy="28.6" r="1.7"/><circle cx="116.4" cy="28.4" r="1.7"/><circle cx="122.9" cy="31.2" r="1.7"/><circle cx="129.4" cy="32.5" r="1.7"/><circle cx="135.9" cy="35.0" r="1.7"/><circle cx="142.4" cy="33.9" r="1.7"/><circle cx="148.9" cy="35.7" r="1.7"/><circle cx="155.4" cy="31.9" r="1.7"/><circle cx="161.9" cy="35.0" r="1.7"/><circle cx="168.4" cy="35.3" r="1.7"/><circle cx="174.9" cy="31.9" r="1.7"/><circle cx="181.4" cy="39.5" r="1.7"/><circle cx="187.9" cy="35.8" r="1.7"/><circle cx="194.4" cy="37.8" r="1.7"/><circle cx="200.9" cy="32.0" r="1.7"/><circle cx="207.4" cy="31.6" r="1.7"/><circle cx="213.9" cy="32.9" r="1.7"/><circle cx="220.4" cy="33.7" r="1.7"/><circle cx="226.9" cy="36.0" r="1.7"/><circle cx="233.4" cy="34.8" r="1.7"/><circle cx="239.9" cy="32.6" r="1.7"/><circle cx="246.4" cy="30.9" r="1.7"/><circle cx="252.9" cy="32.3" r="1.7"/><circle cx="259.4" cy="37.9" r="1.7"/><circle cx="265.9" cy="31.4" r="1.7"/><circle cx="272.4" cy="34.8" r="1.7"/><circle cx="278.9" cy="35.4" r="1.7"/><circle cx="285.4" cy="29.2" r="1.7"/><circle cx="291.9" cy="34.2" r="1.7"/><circle cx="298.3" cy="38.2" r="1.7"/><circle cx="304.8" cy="27.6" r="1.7"/><circle cx="311.3" cy="33.0" r="1.7"/><circle cx="317.8" cy="33.7" r="1.7"/><circle cx="324.3" cy="31.4" r="1.7"/><circle cx="330.8" cy="35.6" r="1.7"/><circle cx="337.3" cy="33.8" r="1.7"/><circle cx="343.8" cy="29.3" r="1.7"/><circle cx="350.3" cy="36.6" r="1.7"/><circle cx="356.8" cy="36.1" r="1.7"/><circle cx="363.3" cy="37.0" r="1.7"/><circle cx="369.8" cy="38.6" r="1.7"/><circle cx="376.3" cy="35.2" r="1.7"/><circle cx="382.8" cy="34.4" r="1.7"/><circle cx="389.3" cy="29.8" r="1.7"/><circle cx="395.8" cy="36.0" r="1.7"/><circle cx="402.3" cy="32.0" r="1.7"/><circle cx="408.8" cy="32.6" r="1.7"/><circle cx="415.3" cy="30.0" r="1.7"/><circle cx="421.8" cy="33.0" r="1.7"/><circle cx="428.3" cy="42.1" r="1.7"/><circle cx="434.8" cy="55.6" r="1.7"/><circle cx="441.3" cy="52.6" r="1.7"/><circle cx="447.8" cy="55.3" r="1.7"/><circle cx="454.3" cy="60.8" r="1.7"/><circle cx="460.8" cy="64.6" r="1.7"/><circle cx="467.3" cy="61.9" r="1.7"/><circle cx="473.8" cy="53.9" r="1.7"/><circle cx="480.3" cy="51.9" r="1.7"/><circle cx="486.8" cy="61.1" r="1.7"/><circle cx="493.2" cy="57.6" r="1.7"/><circle cx="499.7" cy="56.4" r="1.7"/><circle cx="506.2" cy="63.1" r="1.7"/><circle cx="512.7" cy="63.5" r="1.7"/><circle cx="519.2" cy="60.5" r="1.7"/><circle cx="525.7" cy="60.8" r="1.7"/><circle cx="532.2" cy="61.4" r="1.7"/><circle cx="538.7" cy="64.2" r="1.7"/><circle cx="545.2" cy="53.4" r="1.7"/><circle cx="551.7" cy="45.4" r="1.7"/><circle cx="558.2" cy="37.9" r="1.7"/><circle cx="564.7" cy="29.0" r="1.7"/><circle cx="571.2" cy="38.1" r="1.7"/><circle cx="577.7" cy="37.1" r="1.7"/><circle cx="584.2" cy="35.7" r="1.7"/><circle cx="590.7" cy="27.7" r="1.7"/><circle cx="597.2" cy="32.0" r="1.7"/><circle cx="603.7" cy="36.7" r="1.7"/><circle cx="610.2" cy="28.2" r="1.7"/><circle cx="616.7" cy="33.4" r="1.7"/><circle cx="623.2" cy="37.3" r="1.7"/><circle cx="629.7" cy="29.8" r="1.7"/><circle cx="636.2" cy="39.2" r="1.7"/><circle cx="642.7" cy="35.8" r="1.7"/><circle cx="649.2" cy="33.5" r="1.7"/><circle cx="655.7" cy="35.0" r="1.7"/><circle cx="662.2" cy="36.1" r="1.7"/><circle cx="668.7" cy="34.4" r="1.7"/><circle cx="675.2" cy="37.7" r="1.7"/><circle cx="681.7" cy="31.9" r="1.7"/><circle cx="688.1" cy="32.7" r="1.7"/><circle cx="694.6" cy="37.3" r="1.7"/><circle cx="701.1" cy="34.1" r="1.7"/><circle cx="707.6" cy="31.2" r="1.7"/><circle cx="714.1" cy="37.0" r="1.7"/><circle cx="720.6" cy="38.7" r="1.7"/><circle cx="727.1" cy="32.6" r="1.7"/><circle cx="733.6" cy="29.6" r="1.7"/><circle cx="740.1" cy="33.6" r="1.7"/><circle cx="746.6" cy="33.5" r="1.7"/><circle cx="753.1" cy="33.0" r="1.7"/><circle cx="759.6" cy="38.5" r="1.7"/><circle cx="766.1" cy="30.7" r="1.7"/><circle cx="772.6" cy="38.0" r="1.7"/><circle cx="779.1" cy="29.9" r="1.7"/><circle cx="785.6" cy="31.5" r="1.7"/><circle cx="792.1" cy="36.0" r="1.7"/><circle cx="798.6" cy="37.6" r="1.7"/><circle cx="805.1" cy="36.7" r="1.7"/><circle cx="811.6" cy="35.1" r="1.7"/><circle cx="818.1" cy="34.5" r="1.7"/><circle cx="824.6" cy="34.5" r="1.7"/><circle cx="831.1" cy="35.8" r="1.7"/><circle cx="837.6" cy="33.4" r="1.7"/><circle cx="844.1" cy="34.9" r="1.7"/><circle cx="850.6" cy="35.8" r="1.7"/><circle cx="857.1" cy="34.0" r="1.7"/><circle cx="863.6" cy="36.4" r="1.7"/><circle cx="870.1" cy="35.8" r="1.7"/><circle cx="876.6" cy="40.4" r="1.7"/><circle cx="883.0" cy="35.0" r="1.7"/><circle cx="889.5" cy="32.6" r="1.7"/><circle cx="896.0" cy="32.8" r="1.7"/><circle cx="902.5" cy="34.0" r="1.7"/><circle cx="909.0" cy="37.0" r="1.7"/><circle cx="915.5" cy="32.9" r="1.7"/><circle cx="922.0" cy="35.2" r="1.7"/><circle cx="928.5" cy="39.9" r="1.7"/><circle cx="935.0" cy="25.8" r="1.7"/><circle cx="941.5" cy="30.4" r="1.7"/><circle cx="948.0" cy="34.8" r="1.7"/><circle cx="954.5" cy="35.3" r="1.7"/><circle cx="961.0" cy="34.8" r="1.7"/><circle cx="967.5" cy="32.6" r="1.7"/><circle cx="974.0" cy="36.1" r="1.7"/></g>
+      <polyline class="lc-model" points="0,34.0 4,34.0 8,34.0 12,34.0 16,34.0 20,34.0 24,34.0 28,34.0 32,34.0 36,34.0 40,34.0 44,34.0 48,34.0 52,34.0 56,34.0 60,34.0 64,34.0 68,34.0 72,34.0 76,34.0 80,34.0 84,34.0 88,34.0 92,34.0 96,34.0 100,34.0 104,34.0 108,34.0 112,34.0 116,34.0 120,34.0 124,34.0 128,34.0 132,34.0 136,34.0 140,34.0 144,34.0 148,34.0 152,34.0 156,34.0 160,34.0 164,34.0 168,34.0 172,34.0 176,34.0 180,34.0 184,34.0 188,34.0 192,34.0 196,34.0 200,34.0 204,34.0 208,34.0 212,34.0 216,34.0 220,34.0 224,34.0 228,34.0 232,34.0 236,34.0 240,34.0 244,34.0 248,34.0 252,34.0 256,34.0 260,34.0 264,34.0 268,34.0 272,34.0 276,34.0 280,34.0 284,34.0 288,34.0 292,34.0 296,34.0 300,34.0 304,34.0 308,34.0 312,34.0 316,34.0 320,34.0 324,34.0 328,34.0 332,34.0 336,34.0 340,34.0 344,34.0 348,34.0 352,34.0 356,34.0 360,34.0 364,34.0 368,34.0 372,34.0 376,34.0 380,34.0 384,34.0 388,34.0 392,34.0 396,34.0 400,34.0 404,34.0 408,34.0 412,34.0 416,34.0 420,34.0 424,38.7 428,43.5 432,48.2 436,52.9 440,57.6 444,60.0 448,60.0 452,60.0 456,60.0 460,60.0 464,60.0 468,60.0 472,60.0 476,60.0 480,60.0 484,60.0 488,60.0 492,60.0 496,60.0 500,60.0 504,60.0 508,60.0 512,60.0 516,60.0 520,60.0 524,60.0 528,60.0 532,60.0 536,60.0 540,57.6 544,52.9 548,48.2 552,43.5 556,38.7 560,34.0 564,34.0 568,34.0 572,34.0 576,34.0 580,34.0 584,34.0 588,34.0 592,34.0 596,34.0 600,34.0 604,34.0 608,34.0 612,34.0 616,34.0 620,34.0 624,34.0 628,34.0 632,34.0 636,34.0 640,34.0 644,34.0 648,34.0 652,34.0 656,34.0 660,34.0 664,34.0 668,34.0 672,34.0 676,34.0 680,34.0 684,34.0 688,34.0 692,34.0 696,34.0 700,34.0 704,34.0 708,34.0 712,34.0 716,34.0 720,34.0 724,34.0 728,34.0 732,34.0 736,34.0 740,34.0 744,34.0 748,34.0 752,34.0 756,34.0 760,34.0 764,34.0 768,34.0 772,34.0 776,34.0 780,34.0 784,34.0 788,34.0 792,34.0 796,34.0 800,34.0 804,34.0 808,34.0 812,34.0 816,34.0 820,34.0 824,34.0 828,34.0 832,34.0 836,34.0 840,34.0 844,34.0 848,34.0 852,34.0 856,34.0 860,34.0 864,34.0 868,34.0 872,34.0 876,34.0 880,34.0 884,34.0 888,34.0 892,34.0 896,34.0 900,34.0 904,34.0 908,34.0 912,34.0 916,34.0 920,34.0 924,34.0 928,34.0 932,34.0 936,34.0 940,34.0 944,34.0 948,34.0 952,34.0 956,34.0 960,34.0 964,34.0 968,34.0 972,34.0 976,34.0 980,34.0"/>
+    </svg>
+  </figure>
+
+  <section id="about" style="border-top:0">
+    <h2>About</h2>
+    <div class="body">
+      <p>I’m a B.Sc. Physics student at Fergusson College (Autonomous), Pune, studying Physics and Mathematics. I’m interested in observational astrophysics, particularly exoplanets, radial velocities and photometry of eclipsing binaries.</p>
+      <p>I do astrophotography as a way of making systematic observations and analysing the data that comes out of them. I also work as a science communicator at public stargazing sessions, and I’m an active member of the college Astro Club.</p>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="body">
+
+      <article class="entry">
+        <h3>Radial velocities of WASP-18 from archival spectra</h3>
+        <div class="meta"><span class="status">Aug – Sep 2026</span><span>Guided by Jebraan Mudholkar, master’s student, LMU Munich</span></div>
+        <p>An independent extraction of stellar radial velocities from publicly available WASP-18 spectra, using line-by-line Gaussian fitting, to recover the periodic signal induced by its known hot Jupiter.</p>
+        <p>The pipeline takes a star’s name, queries the ESO archive through astroquery, then plots and normalises each spectrum. It fits Gaussians to absorption lines at given rest wavelengths to measure their observed wavelengths, and converts the shifts into a radial velocity per spectrum.</p>
+        <p class="tools">Python, SciPy, Astropy, astroquery · <a href="https://github.com/ekanshtardeja/RVsFromSpectra">RVsFromSpectra on GitHub</a></p>
+      </article>
+
+      <article class="entry">
+        <h3>Times of minima of overcontact eclipsing binaries</h3>
+        <div class="meta"><span class="status">Feb – Mar 2026</span><span>Guided by Ravi Raja Pothuneni, PhD student, Osmania University</span></div>
+        <p>A pipeline for period-variation analysis of two overcontact eclipsing binaries, V2284 Cygni and V1918 Cygni.</p>
+        <p>Given an eclipsing binary’s name, it searches MAST for available light curves, processes and plots them, fits Gaussian profiles to each eclipse, and calculates the times of minima from the fitted profiles.</p>
+        <p class="tools">Python, SciPy, Astropy, Matplotlib · <a href="https://github.com/ekanshtardeja/TimesOfMinimaPipeline">TimesOfMinimaPipeline on GitHub</a></p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="outreach">
+    <h2>Outreach</h2>
+    <div class="body">
+
+      <article class="entry">
+        <h3>Science communicator, Aeronautics and Space Exploration (AXSX)</h3>
+        <div class="meta"><span class="status">Feb 2024 – present</span><span><a href="https://axsx.in/">axsx.in</a></span></div>
+        <p>At AXSX’s public stargazing sessions I guide telescope observations and explain astronomical objects, observing techniques and basic astronomy concepts to participants.</p>
+      </article>
+
+      <article class="entry">
+        <h3>National Science Day open day, IUCAA Pune</h3>
+        <div class="meta"><span class="status">Feb 2026</span></div>
+        <p>Built and explained a model of the nuclide chart for visitors at IUCAA’s annual open day, which brings the public in to learn about the science and research done at the centre.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Astro Club, Fergusson College</h3>
+        <div class="meta"><span class="status">Jul 2025 – present</span></div>
+        <p>Contribute to the annual science poster exhibition, which explains physics to the public through interactive models, posters and demonstrations. Volunteer in organising “Frontiers in Physics”, the club’s two-day national seminar with talks by professors and researchers from leading universities.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="body">
+      <dl class="grid">
+        <dt>Programming</dt><dd>Python, MATLAB, JavaScript</dd>
+        <dt>Libraries</dt><dd>NumPy, SciPy, Astropy, astroquery, Matplotlib</dd>
+        <dt>Tools</dt><dd>Jupyter, Git</dd>
+        <dt>Methods</dt><dd>Spectral line fitting, radial-velocity extraction, light-curve processing, eclipse timing</dd>
+        <dt>Data archives</dt><dd>ESO Science Archive, MAST</dd>
+        <dt>Languages</dt><dd>Hindi (native), English (C2)</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <div class="body">
+      <ol class="timeline">
+        <li><div class="when">Jul 2025 – present</div><div class="what">B.Sc. Physics, with Mathematics<span>Fergusson College (Autonomous), Pune · CGPA 8.95</span></div></li>
+        <li><div class="when">Aug – Sep 2026</div><div class="what">Radial velocities of WASP-18<span>With LMU Munich (remote)</span></div></li>
+        <li><div class="when">Feb – Mar 2026</div><div class="what">Times of minima of overcontact binaries<span>With Osmania University (remote)</span></div></li>
+        <li><div class="when">Feb 2024 – present</div><div class="what">Science communicator<span>Aeronautics and Space Exploration (AXSX)</span></div></li>
+      </ol>
+      <p>The full CV is available as a <a href="files/EkanshTardejaCV.pdf">PDF</a>.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="body">
+      <p>I’m open to research projects in exoplanets and observational stellar astrophysics alongside my degree. Email is the best way to reach me.</p>
+      <dl class="grid">
+        <dt>Email</dt><dd><a href="mailto:ekanshtardeja@gmail.com">ekanshtardeja@gmail.com</a></dd>
+        <dt>GitHub</dt><dd><a href="https://github.com/ekanshtardeja">github.com/ekanshtardeja</a></dd>
+        <dt>Location</dt><dd>Pune, India</dd>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Ekansh Tardeja</footer>
+
+<script>
+(function(){
+  var links=document.querySelectorAll('.nav ul a'),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'));});
+  function mark(){var y=window.scrollY+120,cur=-1;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});links.forEach(function(a,i){a.setAttribute('aria-current',i===cur?'true':'false');});}
+  window.addEventListener('scroll',mark,{passive:true});mark();
+})();
+</script>
+</body>
+</html>
